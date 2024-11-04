@@ -8,7 +8,7 @@
 		"test": "pnpm build && pnpm test:prepare && node --test && pnpm test:cleanup",
 		"test:prepare": "pnpm link .",
 		"test:cleanup": "pnpm unlink hono-passkit-webservice",
-		"run:server": "node specs/server.mjs",
+		"run:server": "node --inspect specs/server.mjs",
 		"prepublish": "pnpm run test && pnpm run build"
 	},
 	"keywords": [
@@ -23,6 +23,7 @@
 	"type": "module",
 	"license": "MIT",
 	"devDependencies": {
+		"@hono/node-server": "^1.13.4",
 		"@types/node": "^20",
 		"hono": "^4.6.8",
 		"passkit-generator": "^3.2.0",
